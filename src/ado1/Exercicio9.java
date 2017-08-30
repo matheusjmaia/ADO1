@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author mathe
  */
-public class Exercico9 {
+public class Exercicio9 {
 
     static Scanner console = new Scanner(System.in);
     static String segunda[] = new String[2];
@@ -49,7 +49,7 @@ public class Exercico9 {
 
     }
 
-    static void mostraAulas(String[][] agenda) {
+    static void mostraAulas() {
         System.out.println("Digite o dia a ser consultado");
         String dia = console.next();
         dia = dia.toLowerCase();
@@ -57,7 +57,7 @@ public class Exercico9 {
             case "segunda":
                 System.out.println("As suas aulas nesse dia são: ");
                 System.out.println(segunda[0]);
-                System.out.println(sesgunda[1]);
+                System.out.println(segunda[1]);
             case "terça":
                 System.out.println("As suas aulas nesse dia são: ");
                 System.out.println(terça[0]);
@@ -78,4 +78,41 @@ public class Exercico9 {
         }
     }
 
+    static void mostraAgenda() {
+        System.out.println("SEGUNDA");
+        System.out.println(segunda[0]);
+        System.out.println(segunda[1]);
+        System.out.println("TERÇA");
+        System.out.println(terça[0]);
+        System.out.println(terça[1]);
+        System.out.println("QUARTA");
+        System.out.println(quarta[0]);
+        System.out.println(quarta[1]);
+        System.out.println("QUINTA");
+        System.out.println(quinta[0]);
+        System.out.println(quinta[1]);
+        System.out.println("SEXTA");
+        System.out.println(sexta[0]);
+        System.out.println(sexta[1]);
+
+    }
+
+    public static void main(String[] args) {
+        pedeAulas();
+        boolean condicao = true;
+        do{
+        System.out.println("O que você quer fazer?");
+        System.out.println("1 - para consultar as aulas de um dia da semana");
+        System.out.println("2 - para mostrar todas as suas aulas ");
+        String aulas = console.next();
+        if (aulas.equalsIgnoreCase("1")) {
+            mostraAulas();
+        } else if (aulas.equalsIgnoreCase("2")) {
+            mostraAgenda();
+        } else if (aulas.equalsIgnoreCase("sair")){
+            condicao = false;
+        }
+    }while (condicao);
+
+}
 }
